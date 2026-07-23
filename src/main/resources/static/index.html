@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17383a">
+  <meta name="description" content="Organiza los cuidados, la salud y la rutina de tus mascotas.">
+  <title>Taskora Pet · Acceso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Epilogue:wght@500;600;700&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="auth">
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<main class="auth-layout" aria-label="Acceso a Taskora Pet">
+  <section class="brand-panel">
+    <div class="brand-lockup brand-lockup-light"><span class="brand-symbol material-symbols-rounded" aria-hidden="true">pets</span><span>Taskora <small>PET CARE</small></span></div>
+    <div class="brand-message"><span class="eyebrow eyebrow-light">CUIDADOS EN ORDEN</span><h1>Su bienestar,<br><em>en buenas manos.</em></h1><p>Una agenda serena para acompañar cada paseo, comida, tratamiento y momento importante.</p></div>
+    <div class="brand-proof" aria-label="Beneficios">
+      <div><span class="material-symbols-rounded" aria-hidden="true">calendar_month</span><strong>Todo en un lugar</strong><small>Rutinas y citas siempre visibles</small></div>
+      <div><span class="material-symbols-rounded" aria-hidden="true">notifications_active</span><strong>A tiempo</strong><small>Recordatorios por tus canales favoritos</small></div>
+    </div>
+  </section>
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="auth-intro"><span class="eyebrow">TU ESPACIO PERSONAL</span><h2>Bienvenido a casa</h2><p id="auth-helper">Ingresa para revisar la rutina de tus compañeros.</p></div>
+      <div class="auth-tabs" role="tablist" aria-label="Opciones de acceso">
+        <button id="login-tab" class="tab active" role="tab" aria-selected="true" aria-controls="login-form" data-auth-tab="login">Iniciar sesión</button>
+        <button id="register-tab" class="tab" role="tab" aria-selected="false" aria-controls="register-form" data-auth-tab="register">Crear cuenta</button>
+      </div>
+      <form id="login-form" class="auth-form" aria-labelledby="login-tab">
+        <label>Correo electrónico<span class="input-wrap"><span class="material-symbols-rounded" aria-hidden="true">mail</span><input name="email" type="email" autocomplete="email" required placeholder="tu@correo.com"></span></label>
+        <label>Contraseña<span class="input-wrap"><span class="material-symbols-rounded" aria-hidden="true">lock</span><input name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="Mínimo 8 caracteres"></span></label>
+        <button class="primary-btn full-btn" type="submit"><span>Entrar a mi agenda</span><span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+        <button type="button" id="forgot-link" class="text-link">¿Olvidaste tu contraseña?</button>
+      </form>
+      <form id="forgot-form" class="auth-form hidden" aria-label="Recuperar contraseña">
+        <p class="muted">Escribe tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+        <label>Correo electrónico<span class="input-wrap"><span class="material-symbols-rounded" aria-hidden="true">mail</span><input name="email" type="email" autocomplete="email" required placeholder="tu@correo.com"></span></label>
+        <button class="primary-btn full-btn" type="submit"><span>Enviar enlace</span><span class="material-symbols-rounded" aria-hidden="true">forward_to_inbox</span></button>
+        <button type="button" id="back-to-login" class="text-link">Volver a iniciar sesión</button>
+      </form>
+      <form id="register-form" class="auth-form hidden" aria-labelledby="register-tab">
+        <label>Nombre completo<input name="fullName" autocomplete="name" required placeholder="Mateo Ojeda"></label>
+        <label>Correo electrónico<input name="email" type="email" autocomplete="email" required placeholder="tu@correo.com"></label>
+        <label>Teléfono / WhatsApp<input name="phoneNumber" type="tel" autocomplete="tel" placeholder="+57 300 000 0000"></label>
+        <label>Contraseña<input name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres"></label>
+        <button class="primary-btn full-btn" type="submit"><span>Crear mi cuenta</span><span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+      </form>
+      <p class="privacy-note"><span class="material-symbols-rounded" aria-hidden="true">verified_user</span> Tus datos y los de tus mascotas están protegidos.</p>
+    </div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

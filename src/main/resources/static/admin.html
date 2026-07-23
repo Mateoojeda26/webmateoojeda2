@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17383a">
+  <meta name="description" content="Administración segura de Taskora Pet.">
+  <title>Taskora Pet · Administración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Epilogue:wght@500;600;700&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="/admin.html"><span class="material-symbols-rounded">pets</span><span>Taskora <small>ADMIN</small></span></a>
+    <nav aria-label="Navegación administrativa">
+      <button class="nav-button active" data-section="dashboard"><span class="material-symbols-rounded">space_dashboard</span>Resumen</button>
+      <button class="nav-button" data-section="users"><span class="material-symbols-rounded">group</span>Usuarios</button>
+      <button class="nav-button" data-section="reminders"><span class="material-symbols-rounded">notifications_active</span>Recordatorios</button>
+      <button class="nav-button" data-section="audit"><span class="material-symbols-rounded">history</span>Auditoría</button>
+    </nav>
+    <button id="logout-button" class="logout-button"><span class="material-symbols-rounded">logout</span>Cerrar sesión</button>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <div><span class="eyebrow">CONTROL GENERAL</span><h1 id="page-title">Panel administrativo</h1></div>
+      <div class="admin-identity"><span class="material-symbols-rounded">shield_person</span><div><strong id="admin-name">Administrador</strong><small>Cuenta protegida</small></div></div>
+    </header>
+    <nav class="mobile-nav" aria-label="Navegación administrativa móvil">
+      <button data-section="dashboard"><span class="material-symbols-rounded">space_dashboard</span>Resumen</button>
+      <button data-section="users"><span class="material-symbols-rounded">group</span>Usuarios</button>
+      <button data-section="reminders"><span class="material-symbols-rounded">notifications</span>Avisos</button>
+      <button data-section="audit"><span class="material-symbols-rounded">history</span>Auditoría</button>
+    </nav>
+    <section id="content" class="content" aria-live="polite"></section>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden" role="presentation">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header><div><span class="eyebrow">DETALLE ADMINISTRATIVO</span><h2 id="modal-title">Usuario</h2></div><button id="close-modal" class="icon-button" aria-label="Cerrar"><span class="material-symbols-rounded">close</span></button></header>
+    <div id="modal-content"></div>
+  </div>
+</div>
+<script src="/admin.js"></script>
+</body>
+</html>

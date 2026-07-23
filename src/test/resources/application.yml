@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:build/taskora_test.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+  task:
+    scheduling:
+      enabled: false
+
+app:
+  jwt:
+    secret: this-is-a-test-secret-must-be-at-least-32-bytes
+    expiration-minutes: 30
+  storage:
+    location: build/test-uploads
+  credentials:
+    encryption-key: test-encryption-key
+  reminders:
+    enabled: false
+  series:
+    auto-generate: false
+    horizon-days: 3
+  telegram:
+    bot-token: ""
+    bot-username: ""
+    link-polling-enabled: false
+  gmail:
+    client-id: ""
+    client-secret: ""

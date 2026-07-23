@@ -1,0 +1,53 @@
+﻿spring:
+  application:
+    name: TaskoraPet
+  datasource:
+    url: jdbc:sqlite:taskora_pet.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:this-is-a-dev-secret-must-be-at-least-32-bytes}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:30}
+  storage:
+    location: ${UPLOAD_DIR:uploads}
+  credentials:
+    encryption-key: ${CREDENTIAL_ENCRYPTION_KEY:${JWT_SECRET:this-is-a-dev-secret-must-be-at-least-32-bytes}}
+  telegram:
+    bot-token: ${TELEGRAM_BOT_TOKEN:}
+    bot-username: ${TELEGRAM_BOT_USERNAME:}
+    link-polling-enabled: ${TELEGRAM_LINK_POLLING_ENABLED:false}
+    poll-delay-ms: ${TELEGRAM_POLL_DELAY_MS:3000}
+  reminders:
+    enabled: ${REMINDERS_ENABLED:true}
+    delay-ms: ${REMINDER_DELAY_MS:60000}
+    late-window-minutes: ${REMINDER_LATE_WINDOW_MINUTES:120}
+  series:
+    auto-generate: ${SERIES_AUTO_GENERATE:true}
+    generate-delay-ms: ${SERIES_GENERATE_DELAY_MS:300000}
+    horizon-days: ${SERIES_HORIZON_DAYS:3}
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  password-reset:
+    expiration-minutes: ${PASSWORD_RESET_EXPIRATION_MINUTES:30}
+    sender-user-email: ${PASSWORD_RESET_SENDER_USER_EMAIL:}
+  demo:
+    enabled: ${TASKORA_DEMO_ENABLED:false}
+  gmail:
+    client-id: ${GMAIL_CLIENT_ID:}
+    client-secret: ${GMAIL_CLIENT_SECRET:}
+    redirect-uri: ${GMAIL_REDIRECT_URI:http://localhost:8080/api/notifications/channels/gmail/callback}
+
+server:
+  port: ${PORT:8080}
